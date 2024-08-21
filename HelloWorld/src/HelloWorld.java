@@ -18,7 +18,6 @@ public class HelloWorld {
 	}
 	
 	public static void sayName(String name) {
-		System.out.println("Hello, " + name + "."); 
-		System.out.println("Hello!");
+		System.out.println("Hello, " + name + ".");
 	}
 }
