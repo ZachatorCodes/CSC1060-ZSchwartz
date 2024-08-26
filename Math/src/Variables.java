@@ -9,11 +9,14 @@ public class Variables {
 		num1 = 6;
 		// Initialization
 		int num2 = 4;
+		
+		// Create variables for math operators
 		int numAdd = num1 + num2;
 		int numSub = num1 - num2;
-		double numDiv = num1 / num2;
+		int numDiv = num1 / num2;
 		int numMultiply = num1 * num2;
 		
+		// Print results of math operations
 		System.out.println("The addition result is: " + numAdd);
 		System.out.println("The subtraction result is: " + numSub);
 		System.out.println("The division result is: " + numDiv);
@@ -26,7 +29,23 @@ public class Variables {
 		// String Concatenation (Using the + operator to combine different variables with a String.
 		System.out.println("The number is \"" + num1 + "\"");
 		
+		// You can use the String method format for String interpolation
 		System.out.println(String.format("The number is %s", numAdd));
+		
+		// Type Casting
+		double num3 = 1.324;
+		int num4 = (int)num3;
+		System.out.println(num4);
+		System.out.println(String.format("Number 3 is %s and Number 4 is %s", num3, num4));
+		
+		// Modulo Operator: Returns Remainder
+		int num5 = num1 % num2;
+		System.out.println(num1 / num2);
+		System.out.println(num5);
+		
+		// Use the built in Math class to access Math methods
+		int num6 = 144;
+		double num7 = Math.sqrt(num6);
+		System.out.println(num7);
 	}
-
 }
