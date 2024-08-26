@@ -1,7 +1,6 @@
 public class Variables {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		// Declaration
 		int num1;
@@ -31,6 +30,7 @@ public class Variables {
 		
 		// You can use the String method format for String interpolation
 		System.out.println(String.format("The number is %s", numAdd));
+		System.out.println(String.format("This is a math test. 1 + 1 is %s", (1 + 1)));
 		
 		// Type Casting
 		double num3 = 1.324;
@@ -47,5 +47,12 @@ public class Variables {
 		int num6 = 144;
 		double num7 = Math.sqrt(num6);
 		System.out.println(num7);
+		
+		double num8 = -1.428;
+		double num8ABS = Math.abs(num8);
+		System.out.println(num8ABS);
+		
+		// If you have calculations that have more than one intermediate step, use variables
+		
 	}
 }
