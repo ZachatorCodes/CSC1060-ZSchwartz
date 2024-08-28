@@ -6,10 +6,12 @@ public class Echo {
 		Scanner scannerObj = new Scanner(System.in);
 		
 		System.out.println("What is your name?");
-		
 		String userName = scannerObj.nextLine();
+		System.out.printf("Your name is %s.\n", userName);
 		
-		System.out.printf("Your name is %s.", userName);
+		System.out.println("How old are you?");
+		int userAge = scannerObj.nextInt();
+		System.out.printf("You are %s years old.\n", userAge);
 	}
 
 }

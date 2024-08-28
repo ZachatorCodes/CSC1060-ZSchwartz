@@ -34,8 +34,6 @@ public class TempConverter {
 			System.out.println(String.format("The final temperature is %s degrees Farenheit", farenheitEnd));
 		}
 		
-		scannerObj.close();
-		
 	}
 
 }
