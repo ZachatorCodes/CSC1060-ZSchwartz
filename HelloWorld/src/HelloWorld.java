@@ -14,8 +14,6 @@ public class HelloWorld {
 		String newName = scanObj.nextLine();
 		
 		sayName(newName);
-
-		scanObj.close();
 	}
 	
 	public static void sayName(String name) {
