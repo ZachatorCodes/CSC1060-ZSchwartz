@@ -1,7 +1,9 @@
+import java.util.Scanner;
 
 public class QuadraticRoots {
 
 	public static void main(String[] args) {
+		Scanner scannerObj = new Scanner(System.in);
 		
 		// Initialize variables
 		int valueA;
@@ -9,9 +11,14 @@ public class QuadraticRoots {
 		int valueC;
 		
 		// Assign values to variables
-		valueA = 3;
-		valueB = 2;
-		valueC = -1;
+		System.out.println("What is the value of A?");
+		valueA = scannerObj.nextInt();
+		
+		System.out.println("What is the value of B?");
+		valueB = scannerObj.nextInt();
+		
+		System.out.println("What is the value of C?");
+		valueC = scannerObj.nextInt();
 		
 		// Calculate the value within the square root
 		double rootValue = Math.sqrt((valueB * valueB) - (4.0 * valueA * valueC));
