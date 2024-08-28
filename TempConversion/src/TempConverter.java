@@ -26,11 +26,11 @@ public class TempConverter {
 		double startingTemp = scannerObj.nextDouble();
 		
 		if (userChoice == 1) {
-			double celsiusEnd = (startingTemp - 32) * (5.0 / 9);
+			double celsiusEnd = (startingTemp - 32) * (5.0 / 9.0);
 			System.out.println(String.format("The final temperature is %s degrees Celsius", celsiusEnd));
 		}
 		else {
-			double farenheitEnd = (startingTemp * (9 / 5)) + 32;
+			double farenheitEnd = (startingTemp * (9.0 / 5.0)) + 32;
 			System.out.println(String.format("The final temperature is %s degrees Farenheit", farenheitEnd));
 		}
 		
