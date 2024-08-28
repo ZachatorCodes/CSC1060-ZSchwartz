@@ -10,8 +10,6 @@ public class Echo {
 		String userName = scannerObj.nextLine();
 		
 		System.out.printf("Your name is %s.", userName);
-		
-		scannerObj.close();
 	}
 
 }
