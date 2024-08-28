@@ -19,7 +19,7 @@ public class QuadraticRoots {
 		
 		System.out.println("What is the value of C?");
 		valueC = scannerObj.nextInt();
-		
+			
 		// Calculate the value within the square root
 		double rootValue = Math.sqrt((valueB * valueB) - (4.0 * valueA * valueC));
 		
