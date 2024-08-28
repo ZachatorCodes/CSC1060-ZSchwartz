@@ -13,7 +13,7 @@ public class TempCalculator {
 		
 		double kelvinTemp = celsiusTemp + 273.15;
 		
-		System.out.println(String.format("%s degrees Farenheit is %s degrees Celsius and %s degrees Kelvin.", farenheitTemp, celsiusTemp, kelvinTemp));
+		System.out.printf("%s degrees Farenheit is %s degrees Celsius and %s degrees Kelvin.\n", farenheitTemp, celsiusTemp, kelvinTemp);
 		
 		scannerObj.close();
 	}
