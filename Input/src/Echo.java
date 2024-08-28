@@ -1,9 +1,17 @@
+import java.util.Scanner;
 
 public class Echo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner scannerObj = new Scanner(System.in);
+		
+		System.out.println("What is your name?");
+		
+		String userName = scannerObj.nextLine();
+		
+		System.out.printf("Your name is %s.", userName);
+		
+		scannerObj.close();
 	}
 
 }
