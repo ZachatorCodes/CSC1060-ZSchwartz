@@ -10,9 +10,9 @@ public class Circle {
 		System.out.println("What is the radius of your circle?");
 		double radius = scannerObj.nextDouble();
 		
-		// Solve for perimeter and area of a circle
+		// Solve for meter and area of a circle
 		double perimeter = Math.PI * 2 * radius;
-		double area = Math.PI * radius * radius;
+		double area = Math.PI * Math.pow(radius, 2);
 		
 		// Print out all information
 		System.out.printf("Radius = %s\nPerimeter is = %s\nArea is = %s", radius, perimeter, area);
