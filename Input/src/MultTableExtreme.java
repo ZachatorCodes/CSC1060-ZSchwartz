@@ -16,17 +16,17 @@ public class MultTableExtreme {
 				System.out.printf("X   ");
 			}
 			else {
-				System.out.printf("%s   ", i);				
+				System.out.printf("%d   ", i);				
 			}
 		}
 		System.out.println();
 		
 		// Loop through every number
 		for (int i = 1; i <= startingNum; i++) {
-			System.out.printf("%s  ", i);
+			System.out.printf("%d  ", i);
 			// For every number, multiply up until starting number
 			for (int j = 1; j <= startingNum; j++) {
-				System.out.printf("%s   ", i * j);
+				System.out.printf("%d   ", i * j);
 			}
 			// Create a new line
 			System.out.println();
