@@ -12,21 +12,16 @@ public class MultTableExtreme {
 		
 		// Print a list of starting values
 		for (int i = 0; i <= startingNum; i++) {
-			if (i == 0) {
-				System.out.printf("X   ");
-			}
-			else {
-				System.out.printf("%d   ", i);				
-			}
+			System.out.printf("%-8d", i);				
 		}
 		System.out.println();
 		
 		// Loop through every number
 		for (int i = 1; i <= startingNum; i++) {
-			System.out.printf("%d  ", i);
+			System.out.printf("%-8d", i);
 			// For every number, multiply up until starting number
 			for (int j = 1; j <= startingNum; j++) {
-				System.out.printf("%d   ", i * j);
+				System.out.printf("%-8d", i * j);
 			}
 			// Create a new line
 			System.out.println();
