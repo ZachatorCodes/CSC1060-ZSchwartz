@@ -15,7 +15,7 @@ public class Circle {
 		double area = Math.PI * Math.pow(radius, 2);
 		
 		// Print out all information
-		System.out.printf("Radius = %s\nPerimeter is = %s\nArea is = %s", radius, perimeter, area);
+		System.out.printf("Radius = %-10.2f\nPerimeter is = %-10.2f\nArea is = %-10.2f", radius, perimeter, area);
 	}
 
 }

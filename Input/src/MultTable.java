@@ -15,7 +15,7 @@ public class MultTable {
 		
 		// Loop through array and display calculated values
 		for (int i = 0; i < multipliedNums.length; i++) {
-			System.out.printf("%s x %s = %s\n", num, i + 1, multipliedNums[i]);
+			System.out.printf("%d x %d = %d\n", num, i + 1, multipliedNums[i]);
 		}
 		
 	}
