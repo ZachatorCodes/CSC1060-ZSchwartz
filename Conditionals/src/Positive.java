@@ -8,10 +8,10 @@ public class Positive {
 		int num;
 
 		System.out.println("Please enter a number and I'll tell you if it's even, odd, or zero!");
-		
+
 		while (errorBool) {
 			try {
-				num = scannerObj.nextInt();	
+				num = scannerObj.nextInt();
 				if (num == 0) {
 					System.out.println("Your number is 0 exactly.");
 				} else if (num % 2 == 0) {
@@ -25,6 +25,6 @@ public class Positive {
 				scannerObj.next();
 			}
 		}
-		
+
 	}
 }
