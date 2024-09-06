@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Module {
-
 	public static void main(String[] args) {
 		Scanner scannerObj = new Scanner(System.in);
 
