@@ -17,7 +17,6 @@ public class InteractiveGreeter {
 		System.out.printf("Hello %s from %s. You are %d years old.\n", userName, userFrom, userAge);
 		
 		System.out.println("What's something you like to do?");
-		
 		// Clear Scanner
 		scnObj.nextLine();
 		String userLike = scnObj.nextLine();
