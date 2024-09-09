@@ -12,13 +12,14 @@ public class Exercise2 {
 	}
 	
 	public static int greatestNumber(int num1, int num2, int num3) {
-		int maxNum = num1;
-		if (num2 > maxNum) {
-			maxNum = num2;
-		}
-		if (num3 > maxNum) {
-			maxNum = num3;
-		}
-		return maxNum;
+//		int maxNum = num1;
+//		if (num2 > maxNum) {
+//			maxNum = num2;
+//		}
+//		if (num3 > maxNum) {
+//			maxNum = num3;
+//		}
+//		return maxNum;
+		return Math.max(Math.max(num1, num2), num3);
 	}
 }
