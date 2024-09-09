@@ -12,7 +12,6 @@ public class Exercise4 {
 	
 	public static String getWeekDay(int day) {
 		String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-		
 		return daysOfWeek[day - 1];
 	}
 
