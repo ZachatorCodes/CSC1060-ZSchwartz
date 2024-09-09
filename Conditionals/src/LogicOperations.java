@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class LogicOperations {
 
 	public static void main(String[] args) {
-
 		// Create Scanner Object
 		Scanner scnObj = new Scanner(System.in);
 
@@ -21,12 +20,25 @@ public class LogicOperations {
 			System.out.println("Greater Than 10 AND Less Than Or Equal To 20");
 		}
 
-		// If input is greater than 30 AND less than 50 OR less than -1 AND greater than
-		// -6
+		// If input is greater than 30 AND less than 50 OR less than -1 AND greater than -6
 		if ((inputValue > 30 && inputValue < 50) || (inputValue < -1 && inputValue > -6)) {
 			System.out.println("In Range");
-		} else {
+		}
+		else {
 			System.out.println("Out Of Range");
+		}
+		
+		if (isSingleDigit(inputValue)) {
+			System.out.println("It is a single digit.");
+		}
+	}
+
+	public static boolean isSingleDigit(int num) {
+		if (num < 10 && num > -10) {
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 
