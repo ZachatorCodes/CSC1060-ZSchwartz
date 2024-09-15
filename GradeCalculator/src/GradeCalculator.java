@@ -17,7 +17,7 @@ public class GradeCalculator {
 		}
 		else {
 			// Calculate letter and print result
-			System.out.println(calculateGrade(grade));
+			System.out.printf("Your grade is %s.", calculateGrade(grade));
 		}
 		
 	}
