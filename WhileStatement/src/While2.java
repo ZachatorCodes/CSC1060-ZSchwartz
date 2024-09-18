@@ -25,8 +25,8 @@ public class While2 {
 		char yesOrNo = 'n';
 
 		while (yesOrNo == 'n') {
-			numOfGuesses++;
 			randomNum = (int) (Math.random() * 10) + 1;
+			numOfGuesses++;
 			System.out.printf("My guess is %d. Is that correct? Please respond with yes or no.\n", randomNum);
 			yesOrNo = scnObj.next().toLowerCase().charAt(0);
 			if (yesOrNo == 'n') {
