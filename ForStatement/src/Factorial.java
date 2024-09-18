@@ -11,7 +11,7 @@ public class Factorial {
 		int num = scnObj.nextInt();
 
 		// Set total number to one (not 0 because of multiplication)
-		int totalNum = 1;
+		int productNum = 1;
 
 		// Return 1 if starting number is 0.
 		if (num == 0) {
@@ -19,10 +19,17 @@ public class Factorial {
 		}
 		// If number is not zero, calculate the factorial and then print the result
 		else {
+			// Counting down version
 			for (int i = num; i >= 1; i--) {
-				totalNum *= i;
+				productNum *= i;
 			}
-			System.out.printf("The factorial of %d is %d.", num, totalNum);
+			
+//			Counting up version
+//			for (int i = 1; i <= num; i++) {
+//				productNum *= i;
+//			}
+			
+			System.out.printf("The factorial of %d is %d.", num, productNum);
 		}
 	}
 }
