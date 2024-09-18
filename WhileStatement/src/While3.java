@@ -17,6 +17,7 @@ public class While3 {
 		while (guessCorrect == 'n') {
 			System.out.println("Guess my number! It is between 10 and 16 (inclusive).");
 			userGuess = scnObj.nextInt();
+			numOfGuesses++;
 			if (userGuess == randNum) {
 				guessCorrect = 'y';
 			}
@@ -25,5 +26,6 @@ public class While3 {
 			}
 		}
 		System.out.println("Congrats! You guessed my number!");
+		System.out.printf("It took you %d tries!", numOfGuesses);
 	}
 }
