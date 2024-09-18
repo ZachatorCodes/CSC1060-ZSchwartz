@@ -22,12 +22,12 @@ public class FactorialFor {
 			for (int i = num; i >= 1; i--) {
 				productNum *= i;
 			}
-			
+
 //			Counting up version
 //			for (int i = 1; i <= num; i++) {
 //				productNum *= i;
 //			}
-			
+
 			System.out.printf("The factorial of %d is %d.", num, productNum);
 		}
 	}

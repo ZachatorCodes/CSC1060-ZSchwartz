@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class FactorialWhile {
-	
+
 	public static void main(String[] args) {
 		// Create Scanner object
 		Scanner scnObj = new Scanner(System.in);
@@ -12,10 +12,10 @@ public class FactorialWhile {
 
 		// Set total number to one (not 0 because of multiplication)
 		int productNum = 1;
-		
+
 		// Create incrementor
 		int incrementor = num;
-		
+
 		// Return 1 if starting number is 0.
 		if (num == 0) {
 			System.out.println("The factorial of 0 is 1.");
