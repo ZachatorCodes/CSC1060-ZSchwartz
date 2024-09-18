@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class SumIntWhile {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scnObj = new Scanner(System.in);
 
 		System.out.println("Please enter a number:");
