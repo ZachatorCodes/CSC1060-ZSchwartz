@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SumInt {
+public class SumIntFor {
 
 	public static void main(String[] args) {
 		Scanner scnObj = new Scanner(System.in);
