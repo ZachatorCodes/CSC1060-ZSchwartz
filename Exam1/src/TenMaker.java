@@ -7,11 +7,11 @@ public class TenMaker {
 		Scanner scnObj = new Scanner(System.in);
 		
 		// Prompt user for first number and store value
-		System.out.println("Please enter your first number:");
+		System.out.println("Please enter your first integer number:");
 		int userNum1 = scnObj.nextInt();
 		
 		// Prompt user for second number and store value
-		System.out.println("Please enter your second number:");
+		System.out.println("Please enter your second integer number:");
 		int userNum2 = scnObj.nextInt();
 		
 		// Call method and store boolean response
