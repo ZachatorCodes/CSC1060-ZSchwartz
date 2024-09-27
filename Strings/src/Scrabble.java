@@ -13,6 +13,7 @@ public class Scrabble {
 
 		boolean canSpellResult = canSpell(userTiles, userWord);
 
+		System.out.println();
 		System.out.println(canSpellResult);
 	}
 
