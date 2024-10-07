@@ -20,6 +20,7 @@ public class ArrayReversal {
 		
 		int filteredNums[] = Arrays.copyOf(nums, incrementor);
 		
+		System.out.println("Your values reversed are:");
 		for (int i = filteredNums.length - 1; i >= 0; i--) {
 			System.out.print(filteredNums[i] + " ");
 		}
