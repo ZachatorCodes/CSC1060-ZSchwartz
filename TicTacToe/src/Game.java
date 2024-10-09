@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Game {
 	
-	static String[][] board = {{" ", "X", " "}, {" ", " ", " "}, {" ", " ", " "}};
+	static String[][] board = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
 	static Random randomObj = new Random();
 	static Scanner scannerObj = new Scanner(System.in);
 	static boolean winBool = false;
@@ -12,7 +12,10 @@ public class Game {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Tic Tac Toe!");
 		printBoard();
-		playGame();
+		while (!winBool) {
+			
+			playGame();
+		}
 	}
 	
 	public static void playGame() {
@@ -41,6 +44,8 @@ public class Game {
 		}
 		
 		printBoard();
+		
+		System.out.println();
 		
 		checkForWin();
 		
