@@ -6,6 +6,7 @@ public class Car {
 	private double amountOfGas;
 	private boolean isClean = false;
 	private SteeringWheel stWheel;
+	private Wheel[] wheels;
 
 	// Constructors
 	public Car() {
@@ -20,18 +21,21 @@ public class Car {
 		this.color = color;
 		this.milage = milage;
 		amountOfGas = 2.0;
+		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, int milage, double amountOfGas) {
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
+		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, double amountOfGas, int milage) {
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
+		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, double amountOfGas, int milage, boolean threeSpoke, String stMaterial) {
