@@ -6,7 +6,7 @@ public class Car {
 	private double amountOfGas;
 	private boolean isClean = false;
 	private SteeringWheel stWheel;
-	private Wheel[] wheels;
+	private Wheel[] wheels = new Wheel[4];
 
 	// Constructors
 	public Car() {
@@ -14,35 +14,33 @@ public class Car {
 		milage = 4;
 		amountOfGas = 2.0;
 		isClean = false;
-		stWheel = new SteeringWheel(true, "Leather");
+		for (int i = 0; i < wheels.length; i++) {
+			wheels[i] = new Wheel(color, 22);
+		}
 	}
 
 	public Car(String color, int milage) {
 		this.color = color;
 		this.milage = milage;
 		amountOfGas = 2.0;
-		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, int milage, double amountOfGas) {
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
-		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, double amountOfGas, int milage) {
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
-		stWheel = new SteeringWheel(true, "Leather");
 	}
 
 	public Car(String color, double amountOfGas, int milage, boolean threeSpoke, String stMaterial) {
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
-		this.stWheel = new SteeringWheel(threeSpoke, stMaterial);
 	}
 
 	// Getters & Setters (Accessor & Mutators)
