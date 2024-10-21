@@ -1,11 +1,13 @@
-import java.util.Arrays;
+import java.util.Random;
 
 public class Deck {
 	private Card[] cards;
+	private Random randObj = new Random();
 	
 	public Deck() {
 		this.cards = new Card[52];
 		int cardIndex = 0;
+		
 		for (int j = 0; j < 4; j++) {
 			for (int i = 1; i < 14; i++) {
 				cards[cardIndex] = new Card(i, j);
@@ -21,11 +23,23 @@ public class Deck {
 	public void setCards(Card[] cards) {
 		this.cards = cards;
 	}
+	
+	public void shuffle() {
+		Card placeholder;
+		
+		for (int i = 0; i < cards.length; i++) {
+			int randomIndex = randObj.nextInt(cards.length);
+			placeholder = cards[i];
+			cards[i] = cards[randomIndex];
+			cards[randomIndex] = placeholder;
+		}
+	}
 
 	@Override
 	public String toString() {
 		// Option 1 (Use StringBuilder):
 		StringBuilder strObj = new StringBuilder();
+		
 		for (int i = 0; i < cards.length; i++) {
 			if (i == 0) {
 				strObj.append(cards[i]);
