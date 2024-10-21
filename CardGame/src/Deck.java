@@ -24,6 +24,7 @@ public class Deck {
 
 	@Override
 	public String toString() {
+		// Option 1 (Use StringBuilder):
 		StringBuilder strObj = new StringBuilder();
 		for (int i = 0; i < cards.length; i++) {
 			if (i == 0) {
@@ -35,10 +36,10 @@ public class Deck {
 		}
 		return strObj.toString();
 		
-//		Option 2:
+//		Option 2 (Use generated toString method):
 //		return "Deck [cards=" + Arrays.toString(cards) + "]";
 		
-//		Option 3:
+//		Option 3 (Use for loop and string concatenation:
 //		String str = "";
 //		for (int i = 0; i < cards.length; i++) {
 //			if (i == 0) {
