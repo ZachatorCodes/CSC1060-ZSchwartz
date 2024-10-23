@@ -15,6 +15,10 @@ public class Deck {
 			}
 		}
 	}
+	
+	public Deck(int numCards) {
+		this.cards = new Card[numCards];
+	}
 
 	public Card[] getCards() {
 		return cards;
@@ -33,6 +37,16 @@ public class Deck {
 			cards[i] = cards[randomIndex];
 			cards[randomIndex] = placeholder;
 		}
+	}
+	
+	public Deck subdeck(int start, int end) {
+		Deck subDeck = new Deck(end - start + 1);
+		int j = 0;
+		for (int i = start; i <= end; i++) {
+			subDeck.cards[j] = this.cards[i];
+			j++;
+		}
+		return subDeck;
 	}
 
 	@Override
