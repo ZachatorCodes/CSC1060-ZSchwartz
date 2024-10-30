@@ -53,7 +53,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return String.format("Course [\n  courseNum = %s\n  numStudents = %d\n  maxStudents = %d\n  credits = %d\n]\n",
-				courseNum, numStudents, maxStudents, credits);
+		return "Course [\n  courseNum = " + courseNum + ",\n  numStudents = " + numStudents + ",\n  maxStudents = "
+				+ maxStudents + ",\n  credits = " + credits + "\n]\n";
 	}
 }
