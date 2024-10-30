@@ -4,7 +4,7 @@ public class Course {
 	private int numStudents;
 	private int maxStudents;
 	private int credits;
-	
+
 	public Course() {
 		this.courseNum = "";
 		this.numStudents = 0;
@@ -53,7 +53,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [\n  courseNum = " + courseNum + ",\n  numStudents = " + numStudents + ",\n  maxStudents = " + maxStudents
-				+ ",\n  credits = " + credits + "\n]\n";
+		return String.format("Course [\n  courseNum = %s\n  numStudents = %d\n  maxStudents = %d\n  credits = %d\n]\n",
+				courseNum, numStudents, maxStudents, credits);
 	}
 }
