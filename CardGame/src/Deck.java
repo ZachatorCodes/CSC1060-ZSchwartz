@@ -48,6 +48,21 @@ public class Deck {
 		}
 		return subDeck;
 	}
+	
+	public void sort() {
+		for (int i = 0; i < cards.length; i++) {
+			int bigIndex = 0;
+			for (int j = 1; j < cards.length; j++) {
+				if (cards[j].compareTo(cards[bigIndex]) > 0) {
+					bigIndex = j;
+				}
+			}
+			Card placeholder = cards[bigIndex];
+			cards[bigIndex] = cards[cards.length - i - 1];
+			cards[cards.length - i - 1] = placeholder;
+			
+		}
+	}
 
 	@Override
 	public String toString() {

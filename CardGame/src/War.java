@@ -5,6 +5,10 @@ public class War {
 		// Create and shuffle deck
 		Deck deck = new Deck();
 		deck.shuffle();
+		System.out.println(deck);
+		
+		deck.sort();
+		System.out.println(deck);
 
 		// Create a pile for player 1
 		Pile p1 = new Pile();
