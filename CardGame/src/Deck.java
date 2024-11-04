@@ -8,8 +8,8 @@ public class Deck {
 		this.cards = new Card[52];
 		int cardIndex = 0;
 		
-		for (int j = 0; j < 4; j++) {
-			for (int i = 1; i < 14; i++) {
+		for (int j = 0; j <= 3; j++) {
+			for (int i = 1; i <= 13; i++) {
 				cards[cardIndex] = new Card(i, j);
 				cardIndex++;
 			}
@@ -49,17 +49,33 @@ public class Deck {
 		return subDeck;
 	}
 	
-	public void sort() {
-		for (int i = 0; i < cards.length; i++) {
-			int bigIndex = 0;
-			for (int j = 1; j < cards.length; j++) {
-				if (cards[j].compareTo(cards[bigIndex]) > 0) {
-					bigIndex = j;
+	public void selectionSort() {
+		// Selection Sort with Min Index
+//		int n = cards.length;
+//		for (int i = 0; i < n - 1; i++ ) {
+//			int minIndex = i;
+//			for (int j = i + 1; j < n; j++) {
+//				if (cards[j].compareTo(cards[minIndex]) < 0) {
+//					minIndex = j;
+//				}
+//			}
+//			Card temp = cards[i];
+//			cards[i] = cards[minIndex];
+//			cards[minIndex] = temp;
+//		}
+		
+		// Selection Sort with Max Index
+		int n = cards.length;
+		for (int i = 0; i < n - 1; i++) {
+			int maxIndex = 0;
+			for (int j = 1; j < n - i; j++) {
+				if (cards[j].compareTo(cards[maxIndex]) > 0) {
+					maxIndex = j;
 				}
 			}
-			Card placeholder = cards[bigIndex];
-			cards[bigIndex] = cards[cards.length - i - 1];
-			cards[cards.length - i - 1] = placeholder;
+			Card temp = cards[n - i - 1];
+			cards[n - i - 1] = cards[maxIndex];
+			cards[maxIndex] = temp;
 			
 		}
 	}
