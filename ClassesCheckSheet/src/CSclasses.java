@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class CSclasses {
 
 	public static void main(String[] args) {
+		Scanner scnObj = new Scanner(System.in);
 		// Create new array to store 6 courses
 		Course[] courseArr = new Course[6];
 
@@ -40,19 +43,28 @@ public class CSclasses {
 		// Print all courses
 		for (Course course : courseArr) {
 			System.out.println(course);
-
 		}
 
+		List<Student> stuList = new ArrayList<Student>();
+		
 		// Create new Student with default constructor
 		Student student1 = new Student();
 		student1.setFirstName("Franklin");
 		student1.setLastName("Smith");
 		student1.setStudentNumber("S10202303");
-		student1.setListOfCourses(new ArrayList<>(Arrays.asList(courseArr[0], courseArr[1])));
+		student1.getListOfCourses().add(courseArr[0]);
 
 		// Create new Student with other constructor
-		Student student2 = new Student("Frank", "Bill", "S23578167",
-				new ArrayList<>(Arrays.asList(courseArr[0], courseArr[1])));
+		Student student2 = new Student("Frank", "Bill", "S23578167", new ArrayList<>(Arrays.asList(courseArr[0], courseArr[1])));
+		
+		stuList.add(student1);
+		stuList.add(student2);
+		
+		System.out.println(student1);
+		System.out.println(student2);
+		
+		student2.removeCourse(courseArr[1]);
+		System.out.println(student2);
 	}
 
 }

@@ -2,12 +2,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Student {
+	private static int idCount = 0;
+	private int studentID;
 	private String firstName;
 	private String lastName;
 	private String studentNumber;
 	private List<Course> listOfCourses;
 
 	public Student() {
+		idCount++;
+		studentID = idCount;
 		this.firstName = "";
 		this.lastName = "";
 		this.studentNumber = "S00000000";
@@ -15,10 +19,28 @@ public class Student {
 	}
 
 	public Student(String firstName, String lastName, String studentNumber, List<Course> listOfCourses) {
+		idCount++;
+		studentID = idCount;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.studentNumber = studentNumber;
 		this.listOfCourses = listOfCourses;
+	}
+	
+	public void addCourse(Course crs) {
+		listOfCourses.add(crs);
+	}
+	
+	public void removeCourse(Course crs) {
+		listOfCourses.remove(crs);
+	}
+	
+	public void removeCourse(String courseName) {
+		for (Course course: listOfCourses) {
+			if (course.getCourseNum().equals(courseName)) {
+				listOfCourses.remove(course);
+			}
+		}
 	}
 
 	public String getFirstName() {
@@ -55,7 +77,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", studentNumber=" + studentNumber
-				+ ", listOfCourses=" + listOfCourses + "]";
+		return "Student [studentID=" + studentID + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", studentNumber=" + studentNumber + ", listOfCourses=" + listOfCourses + "]";
 	}
 }
