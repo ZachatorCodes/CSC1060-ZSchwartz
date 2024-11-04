@@ -33,10 +33,10 @@ public class Card {
 	}
 	
 	public int compareTo(Card ocard) {
-		if (rank < ocard.rank) {
+		if (this.rank < ocard.rank) {
 			return -5;
 		}
-		else if (rank > ocard.rank) {
+		else if (this.rank > ocard.rank) {
 			return 5;
 		}
 		else {
