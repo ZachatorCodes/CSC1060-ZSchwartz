@@ -4,10 +4,18 @@ public class War {
 	public static void main(String[] args) {
 		// Create and shuffle deck
 		Deck deck = new Deck();
+		System.out.println(deck);
+		
+		
+		System.out.println();
+		
 		deck.shuffle();
 		System.out.println(deck);
 		
-		deck.sort();
+		System.out.println();
+		
+		deck.selectionSort();
+	
 		System.out.println(deck);
 
 		// Create a pile for player 1
