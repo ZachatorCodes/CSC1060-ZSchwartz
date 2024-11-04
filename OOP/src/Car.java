@@ -1,6 +1,12 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Car {
 	// Data Members / Object Properties
+	private static List<Car> cars = new ArrayList<>();
+	private static int idCount = 0;
+	private int id;
 	private String color;
 	private int milage;
 	private double amountOfGas;
@@ -10,6 +16,9 @@ public class Car {
 
 	// Constructors
 	public Car() {
+		cars.add(this);
+		idCount++;
+		id = idCount;
 		color = "Pink";
 		milage = 4;
 		amountOfGas = 2.0;
@@ -20,24 +29,32 @@ public class Car {
 	}
 
 	public Car(String color, int milage) {
+		idCount++;
+		id = idCount;
 		this.color = color;
 		this.milage = milage;
 		amountOfGas = 2.0;
 	}
 
 	public Car(String color, int milage, double amountOfGas) {
+		idCount++;
+		id = idCount;
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
 	}
 
 	public Car(String color, double amountOfGas, int milage) {
+		idCount++;
+		id = idCount;
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
 	}
 
 	public Car(String color, double amountOfGas, int milage, boolean threeSpoke, String stMaterial) {
+		idCount++;
+		id = idCount;
 		this.color = color;
 		this.milage = milage;
 		this.amountOfGas = amountOfGas;
@@ -72,6 +89,14 @@ public class Car {
 		this.amountOfGas = amountOfGas;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	// Methods
 	public void drive(int miles) {
 		for (int i = 0; i < miles; i++) {
@@ -89,8 +114,8 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [color=" + color + ", milage=" + milage + ", amountOfGas=" + amountOfGas + ", isClean=" + isClean
-				+ ", stWheel=" + stWheel + "]";
+		return "Car [id=" + id + ", color=" + color + ", milage=" + milage + ", amountOfGas=" + amountOfGas
+				+ ", isClean=" + isClean + ", stWheel=" + stWheel + ", wheels=" + Arrays.toString(wheels) + "]";
 	}
 
 }
