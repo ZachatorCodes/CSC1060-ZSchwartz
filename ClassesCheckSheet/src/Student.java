@@ -2,41 +2,41 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Student {
+	// Create static variable to count students
 	private static int idCount = 0;
-	private int studentID;
+	
+	// Create instance variables
+	private int studentNumber;
 	private String firstName;
 	private String lastName;
-	private String studentNumber;
 	private List<Course> listOfCourses;
 
 	public Student() {
 		idCount++;
-		studentID = idCount;
-		this.firstName = "";
-		this.lastName = "";
-		this.studentNumber = "S00000000";
-		this.listOfCourses = new ArrayList<Course>();
+		this.studentNumber = idCount;
+		this.firstName = "John";
+		this.lastName = "Doe";
+		listOfCourses = new ArrayList<Course>();
 	}
 
-	public Student(String firstName, String lastName, String studentNumber, List<Course> listOfCourses) {
+	public Student(String firstName, String lastName) {
 		idCount++;
-		studentID = idCount;
+		studentNumber = idCount;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.studentNumber = studentNumber;
-		this.listOfCourses = listOfCourses;
+		listOfCourses = new ArrayList<Course>();
 	}
-	
+
 	public void addCourse(Course crs) {
 		listOfCourses.add(crs);
 	}
-	
+
 	public void removeCourse(Course crs) {
 		listOfCourses.remove(crs);
 	}
-	
+
 	public void removeCourse(String courseName) {
-		for (Course course: listOfCourses) {
+		for (Course course : listOfCourses) {
 			if (course.getCourseNum().equals(courseName)) {
 				listOfCourses.remove(course);
 			}
@@ -59,14 +59,6 @@ public class Student {
 		this.lastName = lastName;
 	}
 
-	public String getStudentNumber() {
-		return studentNumber;
-	}
-
-	public void setStudentNumber(String studentNumber) {
-		this.studentNumber = studentNumber;
-	}
-
 	public List<Course> getListOfCourses() {
 		return listOfCourses;
 	}
@@ -75,9 +67,12 @@ public class Student {
 		this.listOfCourses = listOfCourses;
 	}
 
+	public int getStudentNumber() {
+		return studentNumber;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [studentID=" + studentID + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", studentNumber=" + studentNumber + ", listOfCourses=" + listOfCourses + "]";
+		return "Student [studentNumber=" + studentNumber + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 }

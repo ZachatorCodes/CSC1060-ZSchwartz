@@ -4,67 +4,57 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CSclasses {
+	private static Course[] courseArray = new Course[6];
+	private static List<Student> studentList = new ArrayList<Student>();
 
 	public static void main(String[] args) {
+		// Create Scanner Object
 		Scanner scnObj = new Scanner(System.in);
-		// Create new array to store 6 courses
-		Course[] courseArr = new Course[6];
 
-		// Create new course with default constructor
-		// Use setter methods to change data
-		courseArr[0] = new Course();
-		courseArr[0].setCourseNum("CSC1060");
-		courseArr[0].setNumStudents(24);
-		courseArr[0].setMaxStudents(32);
-		courseArr[0].setCredits(4);
+		// Create 6 classes with Course constructor
+		courseArray[0] = new Course("CSC1060", 24, 32, 4);
+		courseArray[1] = new Course("MATH2410", 19, 24, 5);
+		courseArray[2] = new Course("PHI1013", 22, 26, 3);
+		courseArray[3] = new Course("CSC1061", 23, 32, 4);
+		courseArray[4] = new Course("MATH 2420", 17, 24, 5);
+		courseArray[5] = new Course("PSY1002", 30, 30, 3);
 
-		// Create new course with default constructor
-		// Use setter methods to change data
-		courseArr[1] = new Course();
-		courseArr[1].setCourseNum("MATH2410");
-		courseArr[1].setNumStudents(19);
-		courseArr[1].setMaxStudents(24);
-		courseArr[1].setCredits(5);
+		// Create students and add them to the list
+		studentList.add(new Student("Zach", "Schwartz"));
+		studentList.add(new Student("Holden", "James"));
+		studentList.add(new Student("Babka", "Cat"));
 
-		// Create new course with default constructor
-		// Use setter methods to change data
-		courseArr[2] = new Course();
-		courseArr[2].setCourseNum("PHI1013");
-		courseArr[2].setNumStudents(22);
-		courseArr[2].setMaxStudents(26);
-		courseArr[2].setCredits(3);
-
-		// Create new course using constructor
-		// Pass all info as parameter
-		courseArr[3] = new Course("CSC1061", 23, 32, 4);
-		courseArr[4] = new Course("MATH 2420", 17, 24, 5);
-		courseArr[5] = new Course("PSY1002", 30, 30, 3);
-
-		// Print all courses
-		for (Course course : courseArr) {
-			System.out.println(course);
+		addStudentToCourse(studentList.get(0), courseArray[0]);
+		
+		System.out.print("Please enter a student ID: ");
+		int stuId = scnObj.nextInt();
+		System.out.print("Please enter a course ID: ");
+		int courseID = scnObj.nextInt();
+		
+		addStudentToCourse(findStudent(stuId), findCourse(courseID));
+	}
+	
+	public static void addStudentToCourse(Student student, Course course) {
+		student.addCourse(course);
+		course.addStudent(student);
+	}
+	
+	public static Course findCourse(int id) {
+		for (Course course : courseArray) {
+			if (course.getCourseID() == id) {
+				return course;
+			}
 		}
-
-		List<Student> stuList = new ArrayList<Student>();
-		
-		// Create new Student with default constructor
-		Student student1 = new Student();
-		student1.setFirstName("Franklin");
-		student1.setLastName("Smith");
-		student1.setStudentNumber("S10202303");
-		student1.getListOfCourses().add(courseArr[0]);
-
-		// Create new Student with other constructor
-		Student student2 = new Student("Frank", "Bill", "S23578167", new ArrayList<>(Arrays.asList(courseArr[0], courseArr[1])));
-		
-		stuList.add(student1);
-		stuList.add(student2);
-		
-		System.out.println(student1);
-		System.out.println(student2);
-		
-		student2.removeCourse(courseArr[1]);
-		System.out.println(student2);
+		return null;
+	}
+	
+	public static Student findStudent(int id) {
+		for (Student student : studentList) {
+			if (student.getStudentNumber() == id) {
+				return student;
+			}
+		}
+		return null;
 	}
 
 }
