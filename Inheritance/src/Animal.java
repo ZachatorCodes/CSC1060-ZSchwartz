@@ -42,9 +42,9 @@ public class Animal {
 		this.height = height;
 	}
 	
-	public String makeSound() {
-		return "Blah Blah";
-	}
+//	public String makeSound() {
+//		return "Blah Blah";
+//	}
 
 	@Override
 	public String toString() {

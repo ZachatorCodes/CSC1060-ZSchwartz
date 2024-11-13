@@ -8,14 +8,14 @@ public class Dog extends Animal {
 		setHeight(height);
 	}
 
-	@Override
+//	@Override
 	public String makeSound() {
 		return "Bark bark";
 	}
 	
 	@Override
 	public String toString() {
-		return "Dog [getName()=" + getName() + ", getWeight()=" + getWeight() + ", getHeight()=" + getHeight() + "]";
+		return "Dog: " + super.toString();
 	}
 	
 }

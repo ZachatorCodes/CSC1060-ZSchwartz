@@ -12,7 +12,7 @@ public class Cat extends Animal {
 		this.color = color;
 	}
 
-	@Override
+//	@Override
 	public String makeSound() {
 		return "Meow meow";
 	}

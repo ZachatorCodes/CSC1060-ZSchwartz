@@ -12,8 +12,14 @@ public class Horse extends Animal {
 		this.type = type;
 	}
 	
-	@Override
+//	@Override
 	public String makeSound() {
 		return "Neigh neigh";
+	}
+
+	@Override
+	public String toString() {
+		return "Horse [type=" + type + ", getName()=" + getName() + ", getWeight()=" + getWeight() + ", getHeight()="
+				+ getHeight() + "]";
 	}
 }
