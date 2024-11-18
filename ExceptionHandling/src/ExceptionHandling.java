@@ -5,7 +5,6 @@ public class ExceptionHandling {
 		int[] nums = {1, 2, 3, 4, 5};
 		int num1 = 6;
 		int num2 = 0;
-		
 		Integer num3 = null;
 		
 		try {
