@@ -23,8 +23,13 @@ public class FullRemoteCourse extends OnlineCourse {
 	
 	@Override
 	public String toString() {
-		return "FullRemoteCourse [email=" + email + ", getCourseNumber()=" + getCourseNumber() + ", getNumStudents()="
-				+ getNumStudents() + ", getMaxStudents()=" + getMaxStudents() + ", getCredits()=" + getCredits() + "]";
+		return "FullRemoteCourse [\n"
+				+ "  email = " + email 
+				+ "\n  courseNumber = " + getCourseNumber()
+				+ "\n  numStudents = " + getNumStudents()
+				+ "\n  maxStudents = " + getMaxStudents()
+				+ "\n  credits = " + getCredits()
+				+ "\n]";
 	}
 
 }

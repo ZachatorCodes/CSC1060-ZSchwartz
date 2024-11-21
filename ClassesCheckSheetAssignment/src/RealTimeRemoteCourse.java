@@ -4,7 +4,7 @@ public class RealTimeRemoteCourse extends OnlineCourse {
 
 	public RealTimeRemoteCourse() {
 		super();
-		this.zoomRoomCode = 010101;
+		this.zoomRoomCode = 101010;
 	}
 
 	public RealTimeRemoteCourse(String courseNumber, int numStudents, int maxStudents, int credits, int zoomRoomCode) {
@@ -22,9 +22,13 @@ public class RealTimeRemoteCourse extends OnlineCourse {
 
 	@Override
 	public String toString() {
-		return "RealTimeRemoteCourse [zoomRoomCode=" + zoomRoomCode + ", getCourseNumber()=" + getCourseNumber()
-				+ ", getNumStudents()=" + getNumStudents() + ", getMaxStudents()=" + getMaxStudents()
-				+ ", getCredits()=" + getCredits() + "]";
+		return "RealTimeRemoteCourse [\n"
+				+ "  zoomRoomCode = " + zoomRoomCode
+				+ "\n  courseNumber = " + getCourseNumber()
+				+ "\n  numStudents = " + getNumStudents()
+				+ "\n  maxStudents = " + getMaxStudents()
+				+ "\n  credits = " + getCredits()
+				+ "\n]";
 	}
 	
 	
