@@ -31,7 +31,7 @@ public class TestSchoolRecords {
 		Staff staff2 = new Staff("Jimmy Neutron", "7521 Scienceman Bvld", "8505552196", "neutronscientist@frcc.com", "FR650", 102589, "October 12th, 2018", "Researcher");
 		peopleList.add(staff2);
 		
-		// Use foreach loop to loop through all people in list
+		// Use for each loop to loop through all people in list
 		for (Person person: peopleList) {
 			printPersonInfo(person);
 			System.out.println();
