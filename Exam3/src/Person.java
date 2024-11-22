@@ -2,18 +2,18 @@
 public class Person {
 	private String name;
 	private String address;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String emailAddress;
 	
 	public Person() {
 		super();
 		this.name = "Placeholder";
 		this.address = "123 Placeholder St, Fort Collins, CO 80524";
-		this.phoneNumber = 1234567890;
+		this.phoneNumber = "3035551234";
 		this.emailAddress = "placeholder@placeholder.com";
 	}
 	
-	public Person(String name, String address, int phoneNumber, String emailAddress) {
+	public Person(String name, String address, String phoneNumber, String emailAddress) {
 		super();
 		this.name = name;
 		this.address = address;
@@ -37,11 +37,11 @@ public class Person {
 		this.address = address;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
