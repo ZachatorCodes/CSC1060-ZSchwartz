@@ -29,6 +29,7 @@ public class FileWriteCSV {
 			bufferedWriter.write("FirstName,LastName,Addres\n");
 			bufferedWriter.write("John,Doe,345 Maple St.\n");
 			bufferedWriter.append("Jane,Doe,649 Acorn Dr.\n");
+			bufferedWriter.append("Tubby,Bunk,123 Bee Ln.\n");
 			bufferedWriter.flush();
 			bufferedWriter.close();
 			fileWriter.close();
