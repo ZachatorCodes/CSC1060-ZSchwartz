@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +30,8 @@ public class CSclasses {
 		for (int i = 0; i < courses.size(); i++) {
 			printCourseDetailsToString(courses.get(i));
 		}
+		
+		writeToFile(courses);
 	}
 	
 	public static void printCourseDetailsToString(Course course) {
@@ -68,6 +74,50 @@ public class CSclasses {
 				+ "\n  credits = " + course.getCredits()
 				+ "\n]"
 			);
+		}
+	}
+	
+	public static void writeToFile(List<Course> courseList) {
+		File myFile = new File("addresses.csv");
+		FileWriter fileWriter = null;
+		BufferedWriter bufferedWriter = null;
+	
+		try {
+			if (myFile.exists()) {
+				myFile.delete();
+			}
+			
+			if (!myFile.exists()) {
+				myFile.createNewFile();
+			}
+			
+			fileWriter = new FileWriter(myFile.getName(), false); // true / false value determines whether to add or reset file
+			bufferedWriter = new BufferedWriter(fileWriter);
+			
+			for (Course course: courseList) {
+				if (course instanceof InPersonCourse) {
+					InPersonCourse temp = (InPersonCourse) course;
+					bufferedWriter.write(String.format("%d,%s,%d,%d,%d\n",
+							temp.getRoomNumber(), temp.getCourseNumber(), temp.getNumStudents(), temp.getMaxStudents(), temp.getCredits()));
+				}
+				if (course instanceof FullRemoteCourse) {
+					FullRemoteCourse temp = (FullRemoteCourse) course;
+					bufferedWriter.write(String.format("%s,%s,%d,%d,%d\n",
+							temp.getEmail(), temp.getCourseNumber(), temp.getNumStudents(), temp.getMaxStudents(), temp.getCredits()));
+				}
+				if (course instanceof RealTimeRemoteCourse) {
+					RealTimeRemoteCourse temp = (RealTimeRemoteCourse) course;
+					bufferedWriter.write(String.format("%d,%s,%d,%d,%d\n",
+							temp.getZoomRoomCode(), temp.getCourseNumber(), temp.getNumStudents(), temp.getMaxStudents(), temp.getCredits()));
+				}
+			}
+			bufferedWriter.close();
+			fileWriter.close();
+		}
+		catch (IOException e) {
+			System.out.println("Error: IO Exception Caught");
+			System.out.println("Bye Bye :)");
+			System.exit(-1);
 		}
 	}
 }
