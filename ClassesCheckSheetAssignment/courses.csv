@@ -1,3 +1,4 @@
-223,MATH2410,24,32,5
-supercoolteacher@frcc.com,CSC1060,20,24,4
-226536,PHI1013,28,32,3
+CourseType,CourseSpecificInfo,CourseNumber,NumStudents,MaxStudents,Credits
+InPerson,223,MATH2410,24,32,5
+FullRemote,supercoolteacher@frcc.com,CSC1060,20,24,4
+RealTimeRemote,226536,PHI1013,28,32,3
