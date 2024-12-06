@@ -118,19 +118,25 @@ public class DiceGame {
 			if (!myFile.exists()) {
 				myFile.createNewFile();
 			}
+			
 			fileWriter = new FileWriter(myFile.getName(), false); // true / false value determines whether to add or reset file
 			BufferedWriter buffWriter = new BufferedWriter(fileWriter);
 			
+			buffWriter.write("All Results\n\n");
 			buffWriter.write("Player Name,Roll,Number Of Sides\n");
+			
 			for (Player player: players) {
 				buffWriter.write(String.format("%s,%d,%d\n",
-						player.getName(), player.getDie().getValue(), player.getDie().getNumSides()));
+					player.getName(), player.getDie().getValue(), player.getDie().getNumSides()));
 			}
+			
 			buffWriter.write("\n");
-			buffWriter.write("Winners\n");
+			buffWriter.write("Winners\n\n");
+			buffWriter.write("Player Name,Roll,Number Of Sides\n");
 			
 			for (Player player: winners) {
-				buffWriter.write(player.getName() + "," + player.getDie().getValue() + "\n");
+				buffWriter.write(String.format("%s,%d,%d\n",
+					player.getName(), player.getDie().getValue(), player.getDie().getNumSides()));
 			}
 			
 			buffWriter.close();
