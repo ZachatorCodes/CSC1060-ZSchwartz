@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -67,7 +71,7 @@ public class DiceGame {
 					strBld.append(winners.getFirst().getName());
 				}
 				else if (i == winners.size() - 1) {
-					strBld.append(", and ").append(winners.getLast().getName()).append(" won the game");
+					strBld.append(" and ").append(winners.getLast().getName()).append(" won the game");
 				}
 				else {
 					strBld.append(", ").append(winners.get(i).getName());
@@ -76,6 +80,10 @@ public class DiceGame {
 			strBld.toString();
 			System.out.println(strBld);
 		}
+		
+		// Write results to file
+		writeFile(players, winners);
+		System.out.println("\nResults exported to DiceGameOutput.csv");
 	}
 	
 	public static List<Player> decideWinner(Player[] players) {
@@ -97,5 +105,41 @@ public class DiceGame {
 		}
 		
 		return winners;
+	}
+	
+	public static void writeFile(Player[] players, List<Player> winners) {
+		File myFile = new File("DiceGameOutput.csv");
+		FileWriter fileWriter = null;
+		
+		try {
+			if (myFile.exists()) {
+				myFile.delete();
+			}
+			if (!myFile.exists()) {
+				myFile.createNewFile();
+			}
+			fileWriter = new FileWriter(myFile.getName(), false); // true / false value determines whether to add or reset file
+			BufferedWriter buffWriter = new BufferedWriter(fileWriter);
+			
+			buffWriter.write("Player Name,Roll,Number Of Sides\n");
+			for (Player player: players) {
+				buffWriter.write(String.format("%s,%d,%d\n",
+						player.getName(), player.getDie().getValue(), player.getDie().getNumSides()));
+			}
+			buffWriter.write("\n");
+			buffWriter.write("Winners\n");
+			
+			for (Player player: winners) {
+				buffWriter.write(player.getName() + "," + player.getDie().getValue() + "\n");
+			}
+			
+			buffWriter.close();
+			fileWriter.close();
+		}
+		catch (IOException e) {
+			System.out.println("Error: IO Exception Caught");
+			System.out.println("Bye Bye :)");
+			System.exit(-1);
+		}
 	}
 }
