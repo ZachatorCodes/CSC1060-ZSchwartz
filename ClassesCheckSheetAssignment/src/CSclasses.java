@@ -121,7 +121,7 @@ public class CSclasses {
 			fileWriter.close();
 		}
 		catch (IOException e) {
-			System.out.println("Error: IO Exception Caught | Line 125");
+			System.out.println("Error: IO Exception Caught");
 			System.out.println("Bye Bye :)");
 			System.exit(-1);
 		}
@@ -135,7 +135,7 @@ public class CSclasses {
 			fileReader = new Scanner(courseFile);
 		}
 		catch (FileNotFoundException e) {
-			System.out.println("Error: File Not Found | Line 139");
+			System.out.println("Error: File Not Found");
 			System.out.println("Bye Bye :)");
 			System.exit(-1);
 		}
