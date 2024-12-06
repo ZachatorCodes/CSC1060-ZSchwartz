@@ -12,14 +12,14 @@ public class FileWrite {
 			myFile.createNewFile();
 		}
 		
-		FileWriter fileWriter = new FileWriter(myFile.getName(), false);
+		FileWriter fileWriter = new FileWriter(myFile.getName(), false); // true / false value determines whether to add or reset file
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 		bufferedWriter.write("The moon is full today.\n");
 		bufferedWriter.write("It is an auspicious day!\n");
 		bufferedWriter.append("Wahoo!\n");
 		bufferedWriter.flush();
-//		bufferedWriter.close();
-//		fileWriter.close();
+		bufferedWriter.close();
+		fileWriter.close();
 	}
 
 }
