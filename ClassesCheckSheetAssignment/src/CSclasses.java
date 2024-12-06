@@ -31,7 +31,7 @@ public class CSclasses {
 			printCourseDetailsToString(courses.get(i));
 		}
 		
-		writeToFile(courses);
+		writeFile(courses);
 	}
 	
 	public static void printCourseDetailsToString(Course course) {
@@ -77,21 +77,21 @@ public class CSclasses {
 		}
 	}
 	
-	public static void writeToFile(List<Course> courseList) {
-		File myFile = new File("addresses.csv");
+	public static void writeFile(List<Course> courseList) {
+		File courseFile = new File("courses.csv");
 		FileWriter fileWriter = null;
 		BufferedWriter bufferedWriter = null;
 	
 		try {
-			if (myFile.exists()) {
-				myFile.delete();
+			if (courseFile.exists()) {
+				courseFile.delete();
 			}
 			
-			if (!myFile.exists()) {
-				myFile.createNewFile();
+			if (!courseFile.exists()) {
+				courseFile.createNewFile();
 			}
 			
-			fileWriter = new FileWriter(myFile.getName(), false); // true / false value determines whether to add or reset file
+			fileWriter = new FileWriter(courseFile.getName(), false); // true / false value determines whether to add or reset file
 			bufferedWriter = new BufferedWriter(fileWriter);
 			
 			for (Course course: courseList) {
@@ -119,5 +119,9 @@ public class CSclasses {
 			System.out.println("Bye Bye :)");
 			System.exit(-1);
 		}
+	}
+	
+	public static void readFile() {
+		
 	}
 }
